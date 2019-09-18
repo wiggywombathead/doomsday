@@ -1,5 +1,2 @@
 # doomsday
-Inspired by tales of John Conway not being able to log in to his computer until
-he'd correctly computed the day on which a random date fell, this was made to
-help me practise and improve my mental arithmetic, as well as the steps of the
-Doomsday algorithm.
+Written to emulate stories of John Conway not being able to log in to his computer until he'd computed the day on which a particular date fell.
