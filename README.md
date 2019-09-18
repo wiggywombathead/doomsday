@@ -41,6 +41,11 @@ So the doomsday for 2019 is Tuesday + 2 => Thursday
 
 ###
 The doomsday describes the day of the week on which an easy-to-remember set of dates all fall. Calculating the day on which an arbitrary day falls is then a case of finding it in relation to one in this set. The set is (at least) as follows:
+
+| Test | Column |
+|------|--------|
+| Pants| Balls  |
+
 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
 |----------------------------|:-----:|:-----:|:-----:|:-----:|:-----:|
 | Even day-month pairs 		 | 04/04 | 06/06 | 08/08 | 10/10 | 12/12 |
