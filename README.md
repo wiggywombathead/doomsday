@@ -45,6 +45,6 @@ The doomsday describes the day of the week on which an easy-to-remember set of d
 |----------------------------|:-----:|:-----:|:-----:|:-----:|:-----:|
 | Even day-month pairs 		 | 04/04 | 06/06 | 08/08 | 10/10 | 12/12 |
 | Working 9-to-5 at the 7-11 | 09/05 | 07/11 | 05/09 | 11/07 | | |
-| Memorable dates			 | 14/03 (Pi Day) | 04/07 (Independence Day) | 31/10 (Hallowe'en) | 26/12 (Boxing Day) | | |
-| On regular years			 | 03/01 | 14/02 (Valentine's Day) | 28/02 (Last day of February) | | | |
-| On leap years				 | 04/01 | 29/02 | | | | |
+| Memorable dates			 | 14/03 (Pi Day) | 04/07 (Independence Day) | 31/10 (Hallowe'en) | 26/12 (Boxing Day) | &nbsp; | &nbsp; |
+| On regular years			 | 03/01 | 14/02 (Valentine's Day) | 28/02 (Last day of February) | &nbsp; | &nbsp; | &nbsp; |
+| On leap years				 | 04/01 | 29/02 | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
