@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <string.h>
 
+#define MAX_STR_LEN 64
+
 char *days[] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 char *months[] = {
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -40,6 +42,8 @@ int main(void) {
             break;
         case 1:
             day %= (isleap) ? 29 : 28;
+		default:
+			exit(EXIT_FAILURE);
     }
 
     printf("%d %s %d: ", day, months[month], year);
@@ -108,15 +112,21 @@ int main(void) {
         case 11:
             target = 12;
             break;
+		default:
+			exit(EXIT_FAILURE);
     }
 
     int diff = (day - target) % 7;
     int index = (doomsday + diff) % 7;
     char *res = days[index];
 
-    char answer[16];
-    fgets(answer, 16, stdin);
-    strtok(answer, "\n");
+    char answer[MAX_STR_LEN];
+    if (fgets(answer, MAX_STR_LEN, stdin) != NULL) {
+		strtok(answer, "\n");
+	} else {
+		fputs("Something has gone wrong. Exiting.\n", stderr);
+		exit(EXIT_FAILURE);
+	}
 
     clock_t finish = clock();
     double elapsed = (double) (finish - start)/CLOCKS_PER_SEC;
