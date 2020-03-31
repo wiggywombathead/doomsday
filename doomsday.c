@@ -15,11 +15,19 @@ char *months[] = {
 
 void print_usage() {
 
-	puts("When prompted, make a guess of the day of the week");
-	puts("Valid guesses are either the day's index in the week (Sunday = 0, ..., Saturday = 6), or");
+	puts("To query a date, input it as a command line argument of the form"
+			" day/month/year");
+
+	puts("If no command line arguments are given, then when prompted with a"
+			" date, enter the day of the week it falls/fell on.");
+
+	puts("Valid guesses are either the day's index in the week (Sunday = 0,"
+			" ..., Saturday = 6), or");
 
 	for (int i = 0; i < NUM_DAYS_IN_WEEK; i++) 
-		puts(days[i]);
+		printf("%s%s",
+				i == NUM_DAYS_IN_WEEK - 1 ? "or " : days[i],
+				i == NUM_DAYS_IN_WEEK - 1 ? days[i] : ", ");
 }
 
 bool is_leap(int year) {
@@ -84,6 +92,7 @@ int compute_doomsday(int year) {
 char *compute_day(int day, int month, int year) {
 
 	int doomsday = compute_doomsday(year);
+
 	bool isleap = is_leap(year);
 
     int target;
@@ -136,15 +145,33 @@ char *compute_day(int day, int month, int year) {
 
     int diff = (day - target) % 7;
     int index = (doomsday + diff) % 7;
+
     return days[index];
 }
 
-int main(void) {
+void print_date(int d, int m, int y) {
+	printf("%d %s %d", d, months[m], y);
+}
+
+int main(int argc, char *argv[]) {
 
 	int day, month, year;
-	init_date(&day, &month, &year);
 
-    printf("%d %s %d: ", day, months[month], year);
+	if (argc > 1) {
+
+		if (strcmp(argv[1], "--help") == 0) {
+			print_usage();
+		} else { 
+			sscanf(argv[1], "%d/%d/%d", &day, &month, &year);
+			printf("%s\n", compute_day(day, month-1, year));
+		}
+
+		exit(EXIT_SUCCESS);
+	}
+
+	init_date(&day, &month, &year);
+	print_date(day, month, year);
+    printf(": ");
 
 	char *correct_day = compute_day(day, month, year);
 
