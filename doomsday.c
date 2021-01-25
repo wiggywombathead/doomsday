@@ -92,7 +92,6 @@ int compute_doomsday(int year) {
 char *compute_day(int day, int month, int year) {
 
 	int doomsday = compute_doomsday(year);
-
 	bool isleap = is_leap(year);
 
     int target;
